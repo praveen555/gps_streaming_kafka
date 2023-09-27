@@ -32,7 +32,7 @@ def owntracks_data():
     data = request.get_json()  # Parse the JSON data sent by OwnTracks
     if len(data)>1:##process_raw data
          # send it producer right away in kafka
-         print("Sending to producer")
+         #print("Sending to producer")
          producer.send("gps_app", value=data)
          producer.flush()
          return jsonify({"msg": "processed", "status": 200})
@@ -55,8 +55,8 @@ def consume():
 file_lock=threading.Lock()
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 def write_to_text_file(x):
-    print("Writing to file")
-    print(x)
+    # print("Writing to file")
+    # print(x)
     file_name = os.path.join(os.getcwd(),"logs",f"log_{current_date}.txt")
     with file_lock:
         if not os.path.exists(file_name):
