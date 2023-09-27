@@ -14,5 +14,6 @@ For Phase 2 : Use Airflow to build ETL pipelines.
 
 Current Archirecture: 
 
-![image](https://github.com/praveen555/gps_streaming_kafka/assets/23379996/6b070291-121c-47e2-97ef-165a832f79db)
+![image](https://github.com/praveen555/gps_streaming_kafka/assets/23379996/7af254fc-b8a7-4105-ac4b-5c95f2b6fe23)
+
 
