@@ -5,6 +5,7 @@ while True:
     d=consume()
     # d=json.dumps(d)
     #print(d,type(d))
-    write_to_text_file(str(d))
+    for i in d:
+        write_to_text_file(str(i))
 
 

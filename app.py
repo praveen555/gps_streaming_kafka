@@ -46,8 +46,8 @@ def consume():
                                  auto_offset_reset="latest")
             for i in consumer:
                 #print(i)
-                return(i.value)
-                #yield i.value
+                #return(i.value)
+                yield (i.value)
                 #consumer.flush()
         except Exception as e:
             print("Consumer Error",e)
