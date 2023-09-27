@@ -46,8 +46,8 @@ def consume():
                                  auto_offset_reset="latest")
             for i in consumer:
                 #print(i)
-                #return(i.value)
-                yield i.value
+                return(i.value)
+                #yield i.value
                 #consumer.flush()
         except Exception as e:
             print("Consumer Error",e)
@@ -56,16 +56,16 @@ file_lock=threading.Lock()
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 def write_to_text_file(x):
     print("Writing to file")
-    file_name = f"log_{current_date}.txt"
+    print(x)
+    file_name = os.path.join(os.getcwd(),"logs",f"log_{current_date}.txt")
     with file_lock:
         if not os.path.exists(file_name):
             open(file_name,"w").close()
 
-        data_str = json.dumps(x)
         with open(file_name,"a") as file:
-            file.write(data_str+"/n")
+            file.write(x+"/n")
 
-
+#
 if __name__ == '__main__':
     # Create a separate thread for the Kafka consumer
     consumer_thread = threading.Thread(target=consume)
@@ -76,6 +76,8 @@ if __name__ == '__main__':
     file_writer_thread.daemon = True
     file_writer_thread.start()
     app.run(host='0.0.0.0', port=5000)  # Run the Flask app on a desired host and port
+
+
 
 
 
