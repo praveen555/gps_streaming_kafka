@@ -4,8 +4,11 @@ import json
 while True:
     d=consume()
     # d=json.dumps(d)
-    #print(d,type(d))
+    # print(d,type(d))
     for i in d:
-        write_to_text_file(str(i))
+        #print(type(i))
+        json_string=json.dumps(i)
+        #print(json_string)
+        write_to_text_file(json_string)
 
 

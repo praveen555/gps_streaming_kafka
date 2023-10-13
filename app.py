@@ -57,14 +57,13 @@ current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 def write_to_text_file(x):
     # print("Writing to file")
     # print(x)
-    file_name = os.path.join(os.getcwd(),"gps_logs",f"log_{current_date}.txt")
+    file_name = os.path.join(os.getcwd(),"airflow","gps_logs",f"log_{current_date}.txt")
     with file_lock:
         if not os.path.exists(file_name):
             open(file_name,"w").close()
 
         with open(file_name,"a") as file:
-            file.write(x+"/n")
-
+            file.write(x+"\n")
 #
 if __name__ == '__main__':
     # Create a separate thread for the Kafka consumer
