@@ -7,7 +7,7 @@ A real time GPS streaming application developed using python,kakfa and airflow
 3. Phase 3 : Deploy a real time simple to use ML model to see.
 
 
-Current progres [09/27] - Phase 1 is completed where gps logs are being stored in the logs folder. Other improvements in phase 1 include using SSL certifications. 
+Current progres - Phase 2 is WIP with airflow current doing ETL to a csv file. 
 
 For Phase 2 : Use Airflow to build ETL pipelines. 
 
